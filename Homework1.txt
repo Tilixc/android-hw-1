@@ -1,0 +1,154 @@
+vpackage com.example.simple1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.icu.text.Edits;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public abstract class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        EditText num1 = findViewById(R.id.numb1);
+        EditText num2 = findViewById(R.id.numb2);
+        EditText num3 = findViewById(R.id.numb3);
+        EditText num4 = findViewById(R.id.numb4);
+        Button cal = findViewById( R.id.button1);
+        TextView Total =findViewById(R.id.total1);
+
+
+
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int First_Number = Integer.parseInt(num1.getText().toString());
+                int Second_Number = Integer.parseInt(num2.getText().toString());
+                int Third_Number = Integer.parseInt(num3.getText().toString());
+                int Fourth_NumberF = Integer.parseInt(num4.getText().toString());
+                int a = First_Number + Second_Number + Third_Number + Fourth_NumberF ;
+                System.out.println("///" + a);
+                Total.setText("///" + a);
+
+            }
+        });
+
+    }
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03975C"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="46dp"
+        android:background="#03A9F4"
+        android:text=" Grade Calculator "
+        android:textColor="#0329FF"
+        android:textSize="34sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/total1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="178dp"
+        android:background="#03A9F4"
+        android:text=" Result "
+        android:textColor="#0127FD"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/numb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="514dp"
+        android:ems="10"
+        android:hint=" Quizes %15"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/numb2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="236dp"
+        android:ems="10"
+        android:hint=" Homework %25 "
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numb2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginBottom="235dp"
+        android:background="#019C78"
+        android:text=" Calculate " />
+
+    <EditText
+        android:id="@+id/numb3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="303dp"
+        android:ems="10"
+        android:hint=" Mid terms %30 "
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/numb4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="319dp"
+        android:ems="10"
+        android:hint=" Final %30 "
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="84dp"
+        android:text="Reset" />
+
+</RelativeLayout>
+
+
